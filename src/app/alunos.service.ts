@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/index';
+import {Aluno} from './aluno.model';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class AlunosService {
 
   listarAlunos() {
     return this.http.get(this.API_URL + '/alunos/');
+  }
+
+  getAluno(id: number): Observable<Aluno> {
+    return this.http.get<Aluno>(this.API_URL + '/alunos/' + id + '/');
   }
 }
 

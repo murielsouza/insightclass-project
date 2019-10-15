@@ -8,11 +8,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabelaClassificacaoComponent } from './tabela-classificacao/tabela-classificacao.component';
 import {AlunosService} from './alunos.service';
+import {TrabalhosService} from './trabalhos.service';
+import {FrequenciasService} from './frequencias.service';
+import { ListaMissoesComponent } from './lista-missoes/lista-missoes.component';
+import { HomeComponent } from './home/home.component';
+import { Erro404Component } from './erro404/erro404.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabelaClassificacaoComponent
+    TabelaClassificacaoComponent,
+    ListaMissoesComponent,
+    HomeComponent,
+    Erro404Component,
+    PerfilComponent,
+    AboutComponent
   ],
   imports: [
     NgbModule,
@@ -21,7 +33,7 @@ import {AlunosService} from './alunos.service';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AlunosService],
+  providers: [AlunosService, TrabalhosService, FrequenciasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

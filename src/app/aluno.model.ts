@@ -1,15 +1,6 @@
-export class Aluno {
-  id: number;
-  nome: string;
-  frequenciaTotal: string;
-  listaTrofeis: string;
-  listaTrabalhos: string;
+import {Trofeu} from './trofeu.model';
 
-  constructor(id: number, nome: string, frequencias: string , trofeis: string, trabalhos: string) {
-    this.id = id;
-    this.nome = nome;
-    this.frequenciaTotal = frequencias;
-    this.listaTrofeis = trofeis;
-    this.listaTrabalhos = trabalhos;
+export class Aluno {
+  constructor(public id: number, public nome: string, public media: number, public trofeis: Trofeu) {
   }
 }

@@ -36,7 +36,7 @@
 
   .toolbar {
     height: 60px;
-    margin: -8px;
+    margin: 0px;
     display: flex;
     align-items: center;
     background-color: #0c343d;
@@ -302,19 +302,23 @@
     alt="InsightClass Logo"
     src="assets/logo.png"
   />
-  <span>INSIGHT CLASS</span>
-
+  <span> <a routerLink="/home" routerLinkActive="active" style="color: white">INSIGHT CLASS</a></span>
+  <div class="spacer"></div>
+  <span> <a routerLink="/tabeladeclassificacao" routerLinkActive="active" style="color: white">Tabela de Classificação</a></span>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <span style="align-content: end"> <a routerLink="/missoes" routerLinkActive="active" style="color: white">Missões</a></span>
+  <p>&nbsp;&nbsp;&nbsp;</p>
 </div>
 
 
 <div class="content" role="main">
-  <app-tabela-classificacao></app-tabela-classificacao>
+  <router-outlet></router-outlet>
 </div>
 
   <!-- Footer -->
   <footer>
-      Love Angular?&nbsp;
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
+      Amou o InsightClass?&nbsp;
+      <a href="https://github.com/murielsouza/insightclass-project" target="_blank" rel="noopener"> Nos dê uma estrela!
         <div class="github-star-badge">
             <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
           Star
@@ -340,4 +344,4 @@
 
 
 
-<router-outlet></router-outlet>
+
