@@ -12,11 +12,16 @@ export class AlunosService {
   constructor(private http: HttpClient) { }
 
   listarAlunos() {
+    this.http.get(this.API_URL + '/gerarclassificacao/')
     return this.http.get(this.API_URL + '/alunos/');
   }
 
   getAluno(id: number): Observable<Aluno> {
     return this.http.get<Aluno>(this.API_URL + '/alunos/' + id + '/');
+  }
+
+  ordernarPorMedia(a, b) {
+    return a.media - b.media;
   }
 }
 

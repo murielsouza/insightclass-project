@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { Erro404Component } from './erro404/erro404.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AboutComponent } from './about/about.component';
+import {NgSrcModule} from 'ng-src';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NgSrcModule,
     AppRoutingModule
   ],
   providers: [AlunosService, TrabalhosService, FrequenciasService],

@@ -2,8 +2,22 @@
 <p style="font-style: italic; color:#888888"> perfil do estudante selecionado </p>
 <hr>
 <p>
-  <strong>Código</strong>: {{aluno.id}}</p>
+  <strong>Identificador</strong>: {{aluno.id}}</p>
 <p>
   <strong>Nome</strong>: {{aluno.nome}}</p>
 <p>
-  <strong>Trofeis</strong>: {{aluno.trofeis[0].nome}} - <img src="aluno.trofeis[0].img"></p>
+  <strong>Trofeis</strong>:</p>
+
+<div class="row justify-content-around">
+<div *ngFor="let t of aluno.trofeis">
+  <div class="card border-success mb-3 col-sm" style="width: 18rem; height: 16rem">
+    <div class="card-header bg-transparent border-success">{{t.nome}}</div>
+    <img class="card-img-bottom col-3" [ngSrc]="t.img" alt="Medalhão do Card">
+    <div class="card-body text-success">
+      <h5 class="card-title">Vitória</h5>
+      <p class="card-text">{{t.descricao}}</p>
+    </div>
+    <div class="card-footer bg-transparent border-success">Classe: {{t.categoria}}</div>
+  </div>
+</div>
+</div>

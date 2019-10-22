@@ -14,8 +14,8 @@ import {Aluno} from '../aluno.model';
 })
 export class TabelaClassificacaoComponent implements OnInit {
   alunos = null;
-  frequencias = null;
-  trabalhos = null;
+  frequencias = undefined;
+  trabalhos = undefined;
   status = null;
   server = null;
   notaTemp = null;
@@ -23,14 +23,11 @@ export class TabelaClassificacaoComponent implements OnInit {
   // tslint:disable-next-line:max-line-length
   constructor(private alunosService: AlunosService, private trabalhosService: TrabalhosService,
               private  frequenciaService: FrequenciasService, private router: Router) {
-    this.listarAlunos();
-    this.todasFrequencias();
-    this.todosTrabalhos();
-    //this.gerarClassificacao();
-    console.log(this.frequencias);
   }
 
   ngOnInit() {
+      this.listarAlunos();
+      this.gerarClassificacao();
   }
 
   listarAlunos() {
@@ -40,6 +37,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.server = true;
       }, () => this.server = false
     );
+    this.todasFrequencias();
   }
 
   todosTrabalhos() {
@@ -48,6 +46,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.trabalhos = trabalhos;
       }, () => this.status = false
     );
+    this.gerarClassificacao();
   }
 
   todasFrequencias() {
@@ -56,6 +55,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.frequencias = frequencias;
       }, () => this.status = false
     );
+    this.todosTrabalhos();
   }
 
   abrir(aluno: Aluno) {
@@ -63,28 +63,9 @@ export class TabelaClassificacaoComponent implements OnInit {
   }
 
   gerarClassificacao() {
-    for (let a = 0; this.alunos.length > a; a++) {
-      for (let f = 0; this.frequencias.length > f; f++) {
-        if ((this.frequencias[f].aluno).id === this.alunos[a].id) {
-           if (this.frequencias[f].aula1) {
-             this.notaTemp = this.notaTemp + 15;
-           }
-           if (this.frequencias[f].aula2) {
-            this.notaTemp = this.notaTemp + 15;
-          }
-        }
-      }
-      for (let t = 0; this.frequencias.length > t; t++){
-        if ((this.trabalhos[t].aluno).id === this.alunos[a].id){
-            this.notaTemp = this.notaTemp + ((this.trabalhos[t].nota) * 10);
-        }
-      }
-      this.classificados.push(new Classificacao(this.alunos[a].nome, this.notaTemp));
-    }
-
-    this.classificados.sort(function compare(a, b) {
-      if (a.nota < b.nota) { return -1; }
-      if (a.nota > b.nota) { return 1; }
+    this.alunos[0].sort(function compare(a, b) {
+      if (a.media < b.media) { return -1; }
+      if (a.media > b.media) { return 1; }
       return 0;
     });
   }

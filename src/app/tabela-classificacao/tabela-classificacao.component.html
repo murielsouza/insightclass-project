@@ -5,11 +5,11 @@
   <thead class="thead-dark">
   <th>#</th>
   <th>Nome</th>
-  <th width="200">Classificação</th>
+  <th width="200">Pontuação</th>
   </thead>
   <tbody>
   <tr *ngFor = "let classificado of alunos" (click)="abrir(classificado)">
-    <td id="id">{{classificado.id}}</td>
+    <td id="id">🥇</td>
     <td nome="nome">{{classificado.nome}}</td>
     <td nota="nota">{{classificado.media}} XP</td>
   </tr>

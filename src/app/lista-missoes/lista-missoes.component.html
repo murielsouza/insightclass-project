@@ -2,29 +2,24 @@
 <p style="font-style: italic; color:#888888"> missões que a turma devem concluir durante o semestre </p>
 <div class="row justify-content-around" *ngIf="status; else isElse">
   <div *ngFor = "let m of missoes">
-    <div class="card border-success mb-3 col-sm" style="width: 18rem; height: 16rem" *ngIf="situacao; else elseBlock">
-      <div class="card-header bg-transparent border-success">Missão {{m.id}}</div>
-      <div class="card-body text-success">
-        <h5 class="card-title">{{m.nome}}</h5>
-        <p class="card-text">{{m.descricao}}.</p>
-      </div>
-      <div class="card-footer bg-transparent border-success">{{m.conclusao}}! Recompensa: {{m.valor}}XP</div>
+    <div class="alert alert-success" style="width: 800px" *ngIf="m.conclusao == 'Concluída'">
+      <strong>{{m.nome}}</strong> {{m.descricao}} <br> <br> <strong> Recompensa: </strong> <em> {{m.valor}}XP </em>
     </div>
 
-    <ng-template #elseBlock>
-    <div class="card border-danger mb-3 col-sm" style="width: 18rem; height: 16rem">
-      <div class="card-header bg-transparent border-danger">Missão {{m.id}}</div>
-      <div class="card-body text-danger">
-        <h5 class="card-title">{{m.nome}}</h5>
-        <p class="card-text">{{m.descricao}}.</p>
-      </div>
-      <div class="card-footer bg-transparent border-sucess">{{m.conclusao}}! Recompensa: {{m.valor}}XP</div>
+    <div class="alert alert-danger"style="width: 800px" *ngIf="m.conclusao == 'Inconcluída'">
+      <strong>{{m.nome}}</strong> {{m.descricao}} <br> <br> <strong> Recompensa: </strong> <em> {{m.valor}}XP </em>
     </div>
-    </ng-template>
+
+    <div *ngIf="m.conclusao == 'Pendente'">
+      <div class="alert alert-secondary" style="width: 800px" >
+        <strong>{{m.nome}}</strong> {{m.descricao}} <br> <br> <strong> Recompensa: </strong> <em> {{m.valor}}XP </em>
+      </div>
+    </div>
   </div>
 </div>
 
 <ng-template #isElse>
+  <br> <br>
   <div class="alert alert-danger">
     <strong>Ops!</strong> Ocorreu um erro tentar acessar a API para consultar a lista de missões.
     Parece que o servidor está inacessível ou está recusando conexões. Por isso não será possível
