@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AlunosService {
-  API_URL = 'http://127.0.0.1:8000';
+  API_URL = 'http://18.189.43.35:8080/';
 
   constructor(private http: HttpClient) { }
 
