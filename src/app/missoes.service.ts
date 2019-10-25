@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class MissoesService {
-  API_URL = 'http://18.189.43.35:8080/';
+  API_URL = 'http://18.189.43.35:8080';
 
   constructor(private http: HttpClient) { }
 

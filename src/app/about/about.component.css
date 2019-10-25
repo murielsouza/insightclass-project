@@ -1,0 +1,95 @@
+body{
+  font-family: "Lato", "Helvetica Neue", "SEGOE UI", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4A4A4A;
+  cursor: default;
+  background: #6BB9F0;
+}
+h1.titulo{
+  color: white;
+  font-weight: lighter;
+  line-height: 38px;
+  font-size: 30px;
+  margin: .67em 0;
+  text-align: justify;
+}
+p{
+  color: white;
+  font-size: 20px;
+  text-align: justify;
+}
+div.inicio{
+  background-color: purple;
+}
+section{
+  padding: 50px;
+}
+
+nav.navbar-default{
+  background: rgba(0, 0, 0, 0.5);
+
+}
+nav.navbar{
+  text-transform: uppercase;
+  width: 100%;
+  color: white;
+  border-radius: 0;
+  padding: 10px 0;
+  margin: 0;
+  border: 0;
+  font-size: 20px !important;
+  box-shadow: none;
+  z-index: 2;
+  opacity: 1;
+  font-weight: bold;
+}
+
+nav.navbar-fixed-top{
+  top: 0;
+}
+
+header.Header_inicio{
+  min-height: 400px;
+  margin: 0;
+  padding-top: 75px;
+  padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+}
+a{
+  color:white !important;
+}
+
+div.panel{
+  background: #1F3A93;
+}
+
+
+
+div.series{
+  padding-top: 0;
+  display:block;
+
+}
+header{
+  min-height: 550px;
+  margin: 0;
+  padding-top: 57px;
+  justify-content: center;
+  align-items: center;
+  background-color: #6BB9F0;
+
+}
+
+h1.other{
+  font-family: "Lato", "Helvetica Neue", "SEGOE UI", sans-serif;
+  color:white;
+  text-transform: uppercase;
+
+}
+
+footer {
+  background-color: purple;
+}
