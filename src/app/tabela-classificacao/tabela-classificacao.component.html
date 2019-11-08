@@ -7,14 +7,14 @@
   <th>Nome</th>
   <th width="200">Pontuação</th>
   </thead>
-  <tbody>
-  <tr *ngFor = "let classificado of alunos" (click)="abrir(classificado)">
-    <td id="id">🥇</td>
-    <td nome="nome">{{classificado.nome}}</td>
-    <td nota="nota">{{classificado.media}} XP</td>
-  </tr>
-  </tbody>
 </table>
+
+  <div *ngFor = "let classificado of alunos" (click)="abrir(classificado)">
+    <div class="alert alert-secondary" style="width: 800px">
+      <strong>{{classificado.posicao}}</strong> {{classificado.nome}} <br> <br> <strong> Pontuação: </strong> <em> {{classificado.media}}XP </em>
+    </div>
+  </div>
+
 </div>
 
 <ng-template #elseBlock>

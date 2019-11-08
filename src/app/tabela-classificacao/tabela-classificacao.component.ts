@@ -14,6 +14,7 @@ import {Aluno} from '../aluno.model';
 })
 export class TabelaClassificacaoComponent implements OnInit {
   alunos = null;
+  cont = 0;
   frequencias = undefined;
   trabalhos = undefined;
   status = null;
@@ -27,7 +28,7 @@ export class TabelaClassificacaoComponent implements OnInit {
 
   ngOnInit() {
       this.listarAlunos();
-      this.gerarClassificacao();
+      //this.gerarClassificacao();
   }
 
   listarAlunos() {
@@ -37,7 +38,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.server = true;
       }, () => this.server = false
     );
-    this.todasFrequencias();
+    //this.todasFrequencias();
   }
 
   todosTrabalhos() {
@@ -46,7 +47,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.trabalhos = trabalhos;
       }, () => this.status = false
     );
-    this.gerarClassificacao();
+    //this.gerarClassificacao();
   }
 
   todasFrequencias() {
@@ -55,7 +56,7 @@ export class TabelaClassificacaoComponent implements OnInit {
         this.frequencias = frequencias;
       }, () => this.status = false
     );
-    this.todosTrabalhos();
+    //this.todosTrabalhos();
   }
 
   abrir(aluno: Aluno) {

@@ -19,10 +19,6 @@ export class AlunosService {
   getAluno(id: number): Observable<Aluno> {
     return this.http.get<Aluno>(this.API_URL + '/alunos/' + id + '/');
   }
-
-  ordernarPorMedia(a, b) {
-    return a.media - b.media;
-  }
 }
 
 
