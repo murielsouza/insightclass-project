@@ -8,12 +8,12 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {AboutComponent} from './about/about.component';
 
 const routes: Routes = [
-  { path: 'index', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'tabeladeclassificacao', component: TabelaClassificacaoComponent },
   { path: 'alunos/:id', component: PerfilComponent },
   { path: 'missoes', component: ListaMissoesComponent },
   { path: 'sobre', component: AboutComponent },
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+ // { path: '', redirectTo: '/index', pathMatch: 'full' },
   {
     path: '**', component: Erro404Component
   }

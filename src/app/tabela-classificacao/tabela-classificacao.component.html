@@ -1,6 +1,7 @@
 <p class="h2">Tabela de Classificação</p>
 <p style="font-style: italic; color:#888888"> classificação até a última semana </p>
 <div *ngIf="server; else elseBlock">
+  <!--
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
   <th>#</th>
@@ -8,11 +9,19 @@
   <th width="200">Pontuação</th>
   </thead>
 </table>
-
+-->
+  <h3>Top 5</h3>
   <div *ngFor = "let classificado of alunos" (click)="abrir(classificado)">
-    <div class="alert alert-secondary" style="width: 800px">
-      <strong>{{classificado.posicao}}</strong> {{classificado.nome}} <br> <br> <strong> Pontuação: </strong> <em> {{classificado.media}}XP </em>
+
+    <div class="alert alert-primary" style="width: 800px" *ngIf="classificado.posicao == 1 || classificado.posicao == 2 || classificado.posicao == 3 || classificado.posicao == 4 || classificado.posicao == 5; else elseNotFive">
+      <strong> 🥇 {{classificado.posicao}}</strong> {{classificado.nome}} <br> <br> <strong> Pontuação: </strong> <em> {{classificado.media}}XP </em>
     </div>
+
+    <ng-template #elseNotFive>
+      <div class="alert alert-secondary" style="width: 800px">
+        <strong>{{classificado.posicao}}</strong> {{classificado.nome}} <br> <br> <strong> Pontuação: </strong> <em> {{classificado.media}}XP </em>
+      </div>
+    </ng-template>
   </div>
 
 </div>

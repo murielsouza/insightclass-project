@@ -1,13 +1,5 @@
-body{
-  font-family: "Lato", "Helvetica Neue", "SEGOE UI", sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  color: #4A4A4A;
-  cursor: default;
-  background: #6BB9F0;
-}
 h1.titulo{
-  color: white;
+  color: black;
   font-weight: lighter;
   line-height: 38px;
   font-size: 30px;
@@ -79,7 +71,6 @@ header{
   padding-top: 57px;
   justify-content: center;
   align-items: center;
-  background-color: #6BB9F0;
 
 }
 
